@@ -15,7 +15,7 @@ export const client = new MongoClient(uri, {
 export async function dbRun() {
   try {
     await client.connect();
-    await client.db("Cluster0").command({ ping: 1 });
+    await client.db("skills").command({ ping: 1 });
     console.log(
       "Pinged your deployment. You successfully connected to MongoDB!"
     );
