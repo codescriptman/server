@@ -23,18 +23,5 @@ export const getSkillsRouter = () => {
     res.send(await skillRepo.getSkills());
   });
 
-  // router.get("/:id", (req, res) => {
-  //   const foundSkill = db.skills.find(
-  //     (skill) => skill.id === Number(req.params.id)
-  //   );
-
-  //   if (!foundSkill) {
-  //     res.send(404);
-  //     return;
-  //   }
-
-  //   res.send(foundSkill);
-  // });
-
   return router;
 };
