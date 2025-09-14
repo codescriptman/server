@@ -11,9 +11,7 @@ app.use(bodyParser.json());
 app.use("/cv", getCvRouter());
 app.use(
   cors({
-    origin: (origin, callback) => {
-      callback(null, true); // любой домен разрешен
-    }, // твой фронтенд
+    origin: "http://localhost:5173", // твой фронтенд
     methods: ["GET", "POST", "OPTIONS"], // какие методы разрешены
     allowedHeaders: ["Content-Type"], // какие заголовки можно слать
   })
