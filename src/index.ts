@@ -1,11 +1,11 @@
 import { app } from "./app.js";
-import { getSkillsRouter } from "./router/skills.js";
+import { getCvRouter } from "./router/cv.js";
 import bodyParser from "body-parser";
 import { middleware } from "./middlewares/middleware.js";
 import { dbRun } from "./db/db.js";
 
 app.use(bodyParser.json());
-app.use("/skills", getSkillsRouter());
+app.use("/cv", getCvRouter());
 
 const port = process.env.PORT || 3000;
 
