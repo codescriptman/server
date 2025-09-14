@@ -3,9 +3,17 @@ import { getCvRouter } from "./router/cv.js";
 import bodyParser from "body-parser";
 import { middleware } from "./middlewares/middleware.js";
 import { dbRun } from "./db/db.js";
+import cors from "cors";
 
 app.use(bodyParser.json());
 app.use("/cv", getCvRouter());
+app.use(
+  cors({
+    origin: "https://codescriptman.github.io", // твой фронтенд
+    methods: ["GET", "POST", "OPTIONS"], // какие методы разрешены
+    allowedHeaders: ["Content-Type"], // какие заголовки можно слать
+  })
+);
 
 const port = process.env.PORT || 3000;
 
