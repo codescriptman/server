@@ -5,11 +5,13 @@ import { middleware } from "./middlewares/middleware.js";
 import { dbRun } from "./db/db.js";
 import cors from "cors";
 
+//https://codescriptman.github.io
+
 app.use(bodyParser.json());
 app.use("/cv", getCvRouter());
 app.use(
   cors({
-    origin: "https://codescriptman.github.io", // твой фронтенд
+    origin: "*", // твой фронтенд
     methods: ["GET", "POST", "OPTIONS"], // какие методы разрешены
     allowedHeaders: ["Content-Type"], // какие заголовки можно слать
   })
